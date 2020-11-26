@@ -79,7 +79,7 @@ LOCAL_SRC_FILES := \
     twrpRepacker.cpp
 
 LOCAL_STATIC_LIBRARIES += libavb
-LOCAL_SHARED_LIBRARIES += libfs_mgr libinit
+LOCAL_SHARED_LIBRARIES += libfs_mgr
 LOCAL_C_INCLUDES += \
     system/core/fs_mgr/libfs_avb/include/ \
     system/core/fs_mgr/include_fstab/ \
@@ -124,7 +124,7 @@ LOCAL_C_INCLUDES += \
 
 LOCAL_STATIC_LIBRARIES += libguitwrp
 LOCAL_SHARED_LIBRARIES += libz libc libcutils libstdc++ libtar libblkid libminuitwrp libminadbd libmtdutils libtwadbbu libbootloader_message
-LOCAL_SHARED_LIBRARIES += libcrecovery libtwadbbu libtwrpdigest libc++ libaosprecovery libinit libcrypto libbase libziparchive libselinux
+LOCAL_SHARED_LIBRARIES += libcrecovery libtwadbbu libtwrpdigest libc++ libaosprecovery libcrypto libbase libziparchive libselinux
 LOCAL_CFLAGS += -DUSE_28_VERIFIER
 
 ifneq ($(wildcard system/core/libsparse/Android.mk),)
