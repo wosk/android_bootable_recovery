@@ -78,8 +78,8 @@ LOCAL_SRC_FILES := \
     twrpApex.cpp \
     twrpRepacker.cpp
 
-LOCAL_STATIC_LIBRARIES += libavb
-LOCAL_SHARED_LIBRARIES += libfs_mgr
+LOCAL_STATIC_LIBRARIES += libavb libc++fs
+LOCAL_SHARED_LIBRARIES += libfs_mgr libcutils
 LOCAL_C_INCLUDES += \
     system/core/fs_mgr/libfs_avb/include/ \
     system/core/fs_mgr/include_fstab/ \
