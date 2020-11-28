@@ -47,6 +47,7 @@
 // Where in the package we expect to find the edify script to execute.
 // (Note it's "updateR-script", not the older "update-script".)
 static constexpr const char* SCRIPT_NAME = "META-INF/com/google/android/updater-script";
+#define SELINUX_CONTEXTS_TMP "/tmp/file_contexts"
 
 struct selabel_handle *sehandle;
 
