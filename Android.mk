@@ -542,32 +542,6 @@ LOCAL_MODULE := libmounts
 LOCAL_STATIC_LIBRARIES := libbase
 include $(BUILD_STATIC_LIBRARY)
 
-# librecovery (static library)
-# ===============================
-include $(CLEAR_VARS)
-LOCAL_SRC_FILES := \
-    install.cpp
-LOCAL_CFLAGS := -Wall -Werror
-LOCAL_CFLAGS += -DRECOVERY_API_VERSION=$(RECOVERY_API_VERSION)
-
-ifeq ($(AB_OTA_UPDATER),true)
-    LOCAL_CFLAGS += -DAB_OTA_UPDATER=1
-endif
-
-LOCAL_MODULE := librecovery
-LOCAL_STATIC_LIBRARIES := \
-    libminui \
-    libotautil \
-    libvintf \
-    libcrypto_utils \
-    libcrypto \
-    libbase \
-    libziparchive \
-
-include $(BUILD_STATIC_LIBRARY)
-
-# shared libaosprecovery for Apache code
-# ===============================
 include $(CLEAR_VARS)
 
 

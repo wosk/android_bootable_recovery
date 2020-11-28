@@ -11,10 +11,94 @@ cc_defaults {
     name: "recovery_defaults",
     cflags: [
         "-D_FILE_OFFSET_BITS=64",
+
         // Must be the same as RECOVERY_API_VERSION.
         "-DRECOVERY_API_VERSION=3",
+
         "-Wall",
         "-Werror",
     ],
-    cpp_std: "c++17",
+    //cpp_std: "c++17",
+}
+
+cc_defaults {
+    name: "librecovery_defaults",
+
+    defaults: [
+        "recovery_defaults",
+    ],
+
+    shared_libs: [
+        "android.hardware.health@2.0",
+        "libbase",
+        "libbootloader_message",
+        "libcrypto",
+        "libcutils",
+        "libfs_mgr",
+        "liblog",
+        "libziparchive",
+    ],
+
+    static_libs: [
+        "libc++fs",
+        "libinstall",
+        "librecovery_fastboot",
+        "libminui",
+        "libotautil",
+
+        // external dependencies
+        "libhealthhalutils",
+        "libfstab",
+    ],
+}
+
+cc_library_static {
+    name: "librecovery_fastboot",
+    recovery_available: true,
+    defaults: [
+        "recovery_defaults",
+    ],
+
+    srcs: [
+        "fastboot/fastboot.cpp",
+    ],
+
+    shared_libs: [
+        "libbase",
+        "libbootloader_message",
+        "libcutils",
+        "liblog",
+        "librecovery_ui",
+    ],
+
+    static_libs: [
+        "librecovery_ui_default",
+    ],
+}
+
+cc_library_static {
+    name: "librecovery",
+    recovery_available: true,
+
+    defaults: [
+        "librecovery_defaults",
+    ],
+
+    srcs: [
+        "fsck_unshare_blocks.cpp",
+        "recovery.cpp",
+    ],
+
+    shared_libs: [
+        "libfusesideload",
+        "librecovery_ui",
+    ],
+}
+
+filegroup {
+    name: "res-testdata",
+
+    srcs: [
+        "res-*/images/*_text.png",
+    ],
 }
