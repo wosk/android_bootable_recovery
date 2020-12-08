@@ -24,6 +24,7 @@ cc_defaults {
         "libbootloader_message",
         "libbspatch",
         "libedify",
+        "libinstall",
         "libotautil",
         "libext4_utils",
         "libdm",

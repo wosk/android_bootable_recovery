@@ -27,7 +27,7 @@
 #include "minzip/SysUtil.h"
 #else
 #include <ziparchive/zip_archive.h>
-#include "ZipUtil.h"
+#include "install/ziputil.h"
 #include "otautil/sysutil.h"
 #endif
 

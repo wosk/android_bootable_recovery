@@ -32,6 +32,7 @@ updater_common_static_libraries := \
     libbootloader_message \
     libbspatch \
     libedify \
+    libinstall \
     libotautil \
     libext4_utils \
     libdm \

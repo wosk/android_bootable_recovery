@@ -67,6 +67,8 @@ cc_library_static {
         "package.cpp",
         "verifier.cpp",
         "wipe_data.cpp",
+        "ziputil.cpp",
+        "zipwrap.cpp",
     ],
 
     shared_libs: [

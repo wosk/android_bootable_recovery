@@ -23,7 +23,7 @@
 #include <android-base/file.h>
 #include <android-base/test_utils.h>
 #include <gtest/gtest.h>
-#include <otautil/ZipUtil.h>
+#include <install/ziputil.h>
 #include <ziparchive/zip_archive.h>
 
 #include "common/test_constants.h"

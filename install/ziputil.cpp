@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include "ZipUtil.h"
+#include "install/ziputil.h"
 
 #include <errno.h>
 #include <fcntl.h>

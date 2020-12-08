@@ -551,7 +551,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_SRC_FILES := install/adb_install.cpp install/asn1_decoder.cpp install/fuse_sdcard_install.cpp \
     install/get_args.cpp install/install.cpp install/installcommand.cpp install/legacy_property_service.cpp \
     install/package.cpp install/verifier.cpp install/wipe_data.cpp install/tw_atomic.cpp \
-    install/set_metadata.cpp verifier28/verifier.cpp install/zipwrap.cpp install/ZipUtil.cpp
+    install/set_metadata.cpp verifier28/verifier.cpp install/zipwrap.cpp install/ziputil.cpp
 LOCAL_SHARED_LIBRARIES += libbase libbootloader_message libcrypto libext4_utils \
     libfs_mgr libfusesideload libhidl-gen-utils libhidlbase \
     liblog libselinux libtinyxml2 libutils libz libziparchive libcutils
